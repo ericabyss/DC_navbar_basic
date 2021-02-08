@@ -1,0 +1,88 @@
+:root {
+  --text-color: #3cbada;
+  --background-color: #263343;
+  --accent-color: #d49466;
+}
+body {
+  margin: 0;
+  font-family: "Source Sans Pro";
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #263343;
+  padding: 8px 12px;
+}
+.navbar_logo {
+  font-size: 24px;
+  color: var(--text-color);
+}
+.navbar_logo i {
+  color: #d49466;
+}
+.navbar_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.navbar_menu li {
+  padding: 8px 12px;
+}
+.navbar_menu li:hover {
+  background-color: #d49466;
+  border-radius: 4px;
+}
+.navbar_icons {
+  list-style: none;
+  color: white;
+  display: flex;
+  padding-left: 0;
+}
+.navbar_icons li {
+  padding: 8px 12px;
+}
+
+.navbar_toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: #d49466;
+}
+
+@media screen and (max-width: 768px) {
+  /*반응형*/
+  .navbar {
+    flex-direction: column; /*item의 방향을 아래로 바꿈*/
+    align-items: flex-start; /*첫번째 로고는 왼쪽 시작에 놓음*/
+    padding: 8px 24px;
+  }
+  .navbar_menu {
+    display: none;
+    flex-direction: column; /*메뉴도 방향을 아래로 바꿈*/
+    align-items: center; /*메뉴와 아이콘을 가운데로 정렬*/
+    width: 100%; /*메뉴넓이가 작기때문에 적용이 안되므로 수정*/
+  }
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar_toggleBtn {
+    display: block;
+  }
+
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
+}
